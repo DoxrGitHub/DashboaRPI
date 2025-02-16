@@ -34,3 +34,11 @@ Config Options:
 
 - Port
 - Password
+
+## Current Bugs:
+
+- Thermal returning unsupported, even if it is supported
+
+## Screenshot:
+
+![image](https://github.com/user-attachments/assets/1dfb44b4-d1ca-4ef3-91e9-fd725c871b10)
