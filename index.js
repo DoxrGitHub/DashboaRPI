@@ -145,7 +145,7 @@ app.get("/data", async (req, res) => {
 
   craftedDataset.ip.local = getInternalIP();
   try {
-    let thermalfile = fs.readFileSync("cat/sys/class/thermal/thermal_zone0/temp");
+    let thermalfile = fs.readFileSync("cat/sys/class/thermal/thermal_zone0/temp", "utf-8");
     thermalfile = parseInt(thermalfile) / 1000;
     craftedDataset.thermal = thermalfile;
   } catch {
