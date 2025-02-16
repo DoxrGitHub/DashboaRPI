@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+:root {
+    --raspberry-red: #c51d4a;
+    --pink: #FF6384;
+    --dark-blue: #343A40;
+    --light-gray: #f5f5f5;
+    --grayer: #e8e8e8;
+    --medium-gray: #e0e0e0;
+    --raspberry-green: #6CC04A;
+    --raspberry-lightgreen: #81e25a;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--grayer);
+    padding-top: 70px;
+}
+
+header {
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 60px;
+    position: fixed;
+    background-color: var(--dark-blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+
+
+header > h1 span {
+    color: var(--raspberry-red);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+}
+
+.vitals-title {
+    color: #1d5200;
+}
+
+.thermal-title {
+    color: #a46028;
+}
+
+.term-title {
+    color: #822dd7;
+}
+
+.actions-title {
+    color: #004d4b;
+}
+
+.network-title {
+    color: var(--dark-blue);
+}
+
+.overview-title {
+    color: var(--raspberry-red);
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--dark-blue);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#hostname-footer {
+    color: var(--pink);
+}
+
+.rpi-logo {
+    max-height: 45px;
+}
+
+.status-card {
+    border-left: 5px solid var(--raspberry-red);
+}
+
+.vitals-card {
+    border-left: 5px solid var(--raspberry-green);
+}
+
+.network-card {
+    border-left: 5px solid var(--dark-blue);
+}
+
+.thermal-card {
+    border-left: 5px solid #ee8b3a;
+}
+
+.term-card {
+    border-left: 5px solid #8f36e7;
+}
+
+.actions-card {
+    border-left: 5px solid #59d7d9;
+}
+
+.status-message {
+    font-size: 1.1rem;
+    color: #2d8a2d;
+    display: flex;
+    align-items: center;
+}
+
+.status-icon {
+    font-size: 1.3rem;
+    margin-right: 8px;
+    color: #2d8a2d;
+}
+
+.uptime {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin: 10px 0;
+}
+
+.last-updated {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--raspberry-lightgreen);
+    border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--raspberry-lightgreen);
+    border-radius: 10px;
+}
+
+.membar {
+    margin-bottom: 10px;
+}
+
+.sysdata {
+    font-style: bold !important;
+}

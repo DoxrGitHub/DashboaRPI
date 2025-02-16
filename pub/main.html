@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="rpi-logo.png">
+    <title>DashboaRPI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #loader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        transition: opacity 0.5s ease-out, visibility 0.5s ease-out; /* Smooth fade */
+        }
+        
+        #content {
+            display: none;
+        }
+
+        .loader-rpi {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <img src="rpi-logo.png" class="loader-rpi">
+    </div>
+
+    <div id="content">
+    <header>
+        <img src="rpi-logo.png" class="rpi-logo"><h1>Dashboa<span>RPI</span> - <code><span id="hostname-footer">pi1</span></code></h1>
+    </header>
+    
+    <div class="container">
+        <div class="dashboard-grid">
+            <!-- OVERVIEW/STATUS -->
+
+            <div class="card status-card">
+                <div class="card-header">
+                    <h3 class="card-title overview-title">Overview</h3>
+                </div>
+                <div class="card-body">
+                    <p class="uptime"><strong>Uptime:</strong> <span id="uptime">9 hours 10 mins 42 secs</span></p>
+                    <p class="last-updated">Overview Crafted at <span id="last-updated">16:47:22</span></p>
+                </div>
+            </div>
+
+            <!-- VITALS -->
+            <div class="card vitals-card">
+                <div class="card-header">
+                    <h3 class="card-title vitals-title">Memory, CPU</h3>
+                </div>
+                <div class="card-body">
+                    <p class="memory"><strong>Memory Usage:</strong> <span id="used">0 MB</span> / <span id="total">32000 MB</span></p>
+
+                    <progress class="membar" id="memory-bar" value="0" max="100"></progress>
+
+                    <p class="memory"><strong>CPU Usage:</strong> <span id="cpu-usage">35.32%</span></p>
+
+                    <progress id="cpu-bar" value="20" max="100"></progress>
+                </div>
+            </div>
+
+            <!-- NETWORKING -->
+            <div class="card network-card">
+                <div class="card-header">
+                    <h3 class="card-title network-title">Networking</h3>
+                </div>
+                <div class="card-body">
+                    <p>External IPv4: <span id="ipv4"></span></p>
+                    <p>External IPv6: <span id="ipv6"></span></p>
+                    <p>Internal IP: <span id="internal"></span></p>
+
+                    <p>Forwarded Ports: C/S</p>
+                </div>
+            </div>
+
+            <!-- THERMAL -->
+            <div class="card thermal-card">
+                <div class="card-header">
+                    <h3 class="card-title thermal-title">Thermal</h3>
+                </div>
+                <div class="card-body">
+                    <p>Temperature: <span id="temperature"></span><span id="tempF"></span></p>
+                </div>
+            </div>
+
+            <!-- TERMINAL -->
+            <div class="card term-card">
+                <div class="card-header">
+                    <h3 class="card-title term-title">Web Shell - <a href="UWS.html">UWS page</a></h3>
+                </div>
+                <div class="card-body">
+                <iframe src="UWS.html"></iframe>
+                </div>
+            </div>
+
+            <div class="card actions-card">
+                <div class="card-header">
+                    <h3 class="card-title actions-title">Actions</h3>
+                </div>
+                <div class="card-body">
+                    <p>Also coming soon.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
